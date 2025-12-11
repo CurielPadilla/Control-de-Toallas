@@ -1,0 +1,10 @@
+# Imágenes de rostros y exports
+storage/faces/
+storage/exports/
+
+# Archivos de logs
+storage/logs/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
