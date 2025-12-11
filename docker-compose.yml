@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: control-toallas-app
+    ports:
+      - "8080:80"              # Entrarás con http://localhost:8080
+    volumes:
+      - .:/var/www/html        # Monta TODO tu proyecto dentro del contenedor
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: control-toallas-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: control_toallas
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+    ports:
+      - "3307:3306"            # MySQL accesible desde localhost:3307
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql/database.sql:/docker-entrypoint-initdb.d/database.sql
+
+volumes:
+  db_data:

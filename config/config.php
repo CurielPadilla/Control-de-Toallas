@@ -2,11 +2,11 @@
 // config/config.php
 // Ajusta estos valores a tu entorno local
 
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', 'db');     // Nombre del contenedor MySQL
 define('DB_NAME', 'control_toallas');
 define('DB_USER', 'root');
-// Por defecto XAMPP en Windows no usa contraseña para root; si tienes, colócala aquí
-define('DB_PASS', '');
+
+define('DB_PASS', 'root');   // Misma contraseña usada en docker-compose.yml
 
 define('BASE_PATH', __DIR__ . '/../');
 define('PUBLIC_PATH', __DIR__ . '/../public/');
