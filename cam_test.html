@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Test Cámara</title></head>
+<body>
+  <h3>Prueba de cámara</h3>
+  <video id="v" autoplay muted playsinline width="480" height="360" style="background:#000"></video>
+  <script>
+    (async ()=>{
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video:true, audio:false });
+        const v = document.getElementById('v');
+        v.srcObject = stream;
+        await v.play();
+        console.log('Cámara OK:', stream);
+      } catch (e) {
+        console.error('No se pudo abrir cámara', e);
+        alert('No se pudo abrir la cámara: ' + e.name);
+      }
+    })();
+  </script>
+</body>
+</html>

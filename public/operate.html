@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Préstamo / Devolución</title>
+  <link rel=".css
+  <!-- 1) face-api.js -->
+  https://cdn.jsdelivr.net/npm/face-api.js</script>
+  <!-- 2) face.js -->
+  /js/face.js</script>
+  <!-- 3) nuestro JS -->
+  /js/operate.js</script>
+</head>
+<body>
+  /← Inicio</a>
+  <h2>Préstamo / Devolución</h2>
+
+  <div class="grid">
+    <div class="card">
+      <label>Cámara</label>
+      <select id="cameraSelect" style="max-width: 300px"></select>
+
+      <video id="cam" autoplay muted playsinline width="480" height="360" style="background:#000; display:block; margin-top:8px;"></video>
+
+      <div style="margin-top:8px">
+        <label>Acción</label>
+        <select id="tipoAccion">
+          <option value="prestamo">Préstamo</option>
+          <option value="devolucion">Devolución</option>
+        </select>
+        <button id="btnReintentar">Reintentar reconocimiento</button>
+      </div>
+
+      <div id="asociado" style="margin-top:8px">No identificado</div>
+    </div>
+
+    <div class="card">
+      <h3>Tipos de toalla</h3>
+      <div id="tiposToalla"></div>
+      <button id="btnConfirmar" style="margin-top:8px">Confirmar</button>
+    </div>
+  </div>
+</body>
+</html>

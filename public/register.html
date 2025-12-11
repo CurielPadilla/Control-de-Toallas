@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de Asociado</title>
+
+  <!-- Estilos -->
+  /css/styles.css
+
+  <!-- 1) face-api.js debe cargarse antes que face.js -->
+  https://cdn.jsdelivr.net/npm/face-api.js</script>
+
+  <!-- 2) face.js define loadFaceModels() y getTinyOptions() -->
+  /js/face.js</script>
+
+  <!-- 3) Lógica de esta página -->
+  /js/register.js</script>
+</head>
+<body>
+  /← Inicio</a>
+  <h2>Registro de asociado</h2>
+
+  <div class="grid">
+    <!-- CARD: Datos del asociado -->
+    <div class="card">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" placeholder="Nombre completo" autocomplete="off">
+
+      <label for="membresia">Membresía</label>
+      <input id="membresia" placeholder="ID de membresía" autocomplete="off">
+
+      <button id="btnCrear" type="button">Crear asociado</button>
+      <div id="res" style="margin-top:8px;color:#666">Listo para registrar</div>
+    </div>
+
+    <!-- CARD: Cámara y capturas -->
+    <div class="card">
+      <label for="cameraSelect">Cámara</label>
+      <select id="cameraSelect" style="max-width: 300px"></select>
+
+      <video id="video" autoplay muted playsinline width="480" height="360"
+             style="background:#000; display:block; margin-top:8px;"></video>
+
+      <div style="margin-top:8px">
+        <button id="btnCapturar" type="button">Capturar muestra</button>
+        <button id="btnGuardar" type="button">Guardar muestras</button>
+      </div>
+
+      <div id="muestras" class="grid" style="margin-top:8px"></div>
+    </div>
+  </div>
+</body>
+</html>

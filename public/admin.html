@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administración / Historial</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/admin.js" defer></script>
+  <!-- SheetJS y jsPDF por CDN para exportar -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.3/dist/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <a href="/">← Inicio</a>
+  <h2>Administración / Historial</h2>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label>Desde</label>
+        <input type="datetime-local" id="from">
+      </div>
+      <div>
+        <label>Hasta</label>
+        <input type="datetime-local" id="to">
+      </div>
+      <div>
+        <label>Membresía o nombre</label>
+        <input id="q" placeholder="Buscar asociado">
+        <div id="sugs" class="card"></div>
+      </div>
+      <div>
+        <label>Tipo de evento</label>
+        <select id="tipo">
+          <option value="">Todos</option>
+          <option value="prestamo">Préstamo</option>
+          <option value="devolucion">Devolución</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-top:8px">
+      <button id="btnBuscar">Buscar</button>
+      <a id="btnCSV" target="_blank" class="badge">Descargar CSV (servidor)</a>
+      <button id="btnXLSX">Exportar Excel</button>
+      <button id="btnPDF">Exportar PDF</button>
+    </div>
+  </div>
+
+  <table class="table" id="tbl">
+    <thead>
+      <tr><th>Fecha/Hora</th><th>Asociado</th><th>Membresía</th><th>Tipo</th><th>Código</th><th>Toalla</th><th>Cantidad</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</body>
+</html>
